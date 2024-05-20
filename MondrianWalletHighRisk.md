@@ -3,7 +3,7 @@
 High Risk
 
 ## Relevant GitHub Links
-GitHub Link
+https://github.com/Cyfrin/2024-05-Mondrian-Wallet/blob/main/contracts/MondrianWallet.sol
 
 ## Summary
 The Mondrian Wallet contract's _validateSignature function lacks proper authentication checks, allowing potentially unauthorized users to execute transactions. This vulnerability arises from the absence of verification to ensure that the provided signature corresponds to the expected signer, the owner of the Mondrian Wallet.
