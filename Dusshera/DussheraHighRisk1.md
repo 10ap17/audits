@@ -75,8 +75,7 @@ The vulnerability arises from the use of on-chain randomness generation in the `
 ##### Cause of the Issue
 The primary cause of the bad randomness vulnerability lies in the reliance on on-chain sources for generating random values. In the `Dussehra` event's `Ram` selection process, the function utilizes `block.prevranda`o to derive randomness. While `block.prevrandao` introduces some level of randomness, it is still deterministic and susceptible to manipulation. This reliance on on-chain sources for randomness compromises the integrity of the selection process, as it cannot guarantee truly random outcomes. 
 ```solidity
-uint256 random =
-            uint256(keccak256(abi.encodePacked(block.timestamp, block.prevrandao, msg.sender))) % 2;
+uint256 random = uint256(keccak256(abi.encodePacked(block.timestamp, block.prevrandao, msg.sender))) % 2;
 ```
 ```solidity
 uint256 random = uint256(keccak256(abi.encodePacked(block.timestamp, block.prevrandao))) % ramNFT.tokenCounter();
